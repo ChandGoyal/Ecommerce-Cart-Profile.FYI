@@ -1,20 +1,47 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import CartPage from "./features/cart/CartPage";
 import Notification from "./components/Notification";
+import Login from "./components/Login";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Login />
+        </>
+      ),
+    },
+    {
+      path: "/products",
+      element: (
+        <>
+          <Navbar />
+          <HomePage />
+          <Notification />
+        </>
+      ),
+    },
+    {
+      path: "/cart",
+      element: (
+        <>
+          <Navbar />
+          <CartPage />
+          <Notification />
+        </>
+      ),
+    },
+  ]);
+
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/cart" element={<CartPage />} />
-      </Routes>
-      <Notification />
-    </Router>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   );
 };
 

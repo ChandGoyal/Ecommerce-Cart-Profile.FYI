@@ -24,7 +24,7 @@ const CartPage = () => {
     toast.success("Order Placed!");
     dispatch(clearCart());
     setTimeout(() => {
-      navigate("/");
+      navigate("/products");
     }, 500);
   };
 

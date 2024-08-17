@@ -5,7 +5,7 @@ const initialState = {
   cartItems: [],
   totalQuantity: 0,
   totalAmount: 0,
-  discount: 0, // To store the discount percentage
+  discount: 0,
 };
 
 const cartSlice = createSlice({
@@ -67,7 +67,7 @@ const cartSlice = createSlice({
       state.cartItems = [];
       state.totalQuantity = 0;
       state.totalAmount = 0;
-      state.discount = 0; // Reset discount on cart clear
+      state.discount = 0;
     },
   },
 });
