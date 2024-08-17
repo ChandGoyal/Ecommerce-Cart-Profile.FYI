@@ -139,7 +139,7 @@ const Login = () => {
           </button>
           {isSignInForm ? (
             <p className="text-center text-sm mt-4">
-              <span className="text-gray-600">New to Netflix? </span>
+              <span className="text-gray-600">New to MyStore? </span>
               <span
                 className="text-blue-500 cursor-pointer hover:underline"
                 onClick={toggleSignInForm}
